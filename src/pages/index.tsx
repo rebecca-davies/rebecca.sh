@@ -4,8 +4,8 @@ import Link from "next/link";
 import { api } from "~/utils/api";
 import { useState, useRef, useEffect } from "react";
 import Navbar from "~/components/nav/nav";
-import Banner from "~/components/body/banner";
-import About from "~/components/body/about";
+import Banner from "~/components/section/banner";
+import About from "~/components/section/about";
 import Social from "~/components/footer/social";
 import {
   motion,
