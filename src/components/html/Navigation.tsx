@@ -33,7 +33,7 @@ const Navigation = (props: NavigationProps) => {
         <ul ref={parentRef} className={classes}>
            {items.map((item, index) => (
                 <li className="relative opacity-0 top-[-50px]">
-                    <Link href="#">{item}</Link>
+                    <Link href="#about">{item}</Link>
                 </li>
            ))}
         </ul>

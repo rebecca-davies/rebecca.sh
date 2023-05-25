@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useAnimate } from "framer-motion";
 import Link from "next/link";
-import Typing from "../effects/Typing";
 import Lottie from "lottie-react";
 import bgAnimation from "src/assets/animationData/g3Ux1uyvaN.json";
 import Button from "../html/Button";
+import bgGradient from "src/assets/animationData/Comp 4.json";
 
 
 const Banner = () => {
@@ -42,8 +42,13 @@ const Banner = () => {
             className="top-0 left-0 absolute z-10 w-screen h-screen svgContainer" 
             animationData={bgAnimation} 
             rendererSettings={{preserveAspectRatio: "xMidYMid slice"}} />
+            <Lottie 
+            loop={true} 
+            className="top-0 left-0 absolute z-[1] w-screen h-screen opacity-0" 
+            animationData={bgGradient} 
+            rendererSettings={{preserveAspectRatio: "xMidYMid slice"}} />
             <div ref={bannerPage} className="hidden relative overflow-clip h-screen flex items-center justify-center bg-[#140c3e]">
-                <div ref={bannerBody} className="max-w-4xl pr-10 pl-10">
+                <div ref={bannerBody} className="max-w-4xl pr-10 pl-10 z-[2]">
                     <p className="text-[#dcff2d] font-roboto-mono text-base mb-5 relative opacity-0 top-[20px]">Hey there! My name is</p>
                     <p className="text-purple-100 text-7xl font-bold mb-5 relative opacity-0 top-[20px]">Rebecca Davies.</p>
                     <p className="text-[#bdaecd] text-7xl mb-5 font-semibold relative opacity-0 top-[20px]">I build cool things online.</p>
