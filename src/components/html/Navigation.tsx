@@ -11,11 +11,11 @@ const Navigation = (props: NavigationProps) => {
     const [scope, animate] = useAnimate();
     const items = props.items;
     const classes = props.classes;
-    const parentRef = useRef(null);
+    const parentRef = useRef<HTMLUListElement | null>(null);
 
     useEffect(() => {
-        const navItems = parentRef.current.children;
-        const animationTimeouts = Array.from(navItems).map((item, index) => {
+        const navItems = parentRef.current?.children;
+        const animationTimeouts = Array.from(navItems || []).map((item, index) => {
         return setTimeout(() => {
             animate(
             item,

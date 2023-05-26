@@ -1,5 +1,4 @@
 import { createTRPCRouter } from "~/server/api/trpc";
-import { currentPage } from "~/server/api/routers/activePage";
 
 /**
  * This is the primary router for your server.
@@ -7,7 +6,6 @@ import { currentPage } from "~/server/api/routers/activePage";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  currentPageRouter: currentPage,
 });
 
 // export type definition of API

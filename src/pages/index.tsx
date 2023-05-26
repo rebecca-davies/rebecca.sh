@@ -1,26 +1,12 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import { api } from "~/utils/api";
-import { useState, useRef, useEffect } from "react";
+import { useRef } from "react";
 import Navbar from "~/components/nav/nav";
 import Banner from "~/components/section/banner";
 import About from "~/components/section/about";
 import Social from "~/components/footer/social";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue
-} from "framer-motion";
 
-
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
-
-function Section( { child }) {
+function Section( { child } : { child: JSX.Element} ) {
   const ref = useRef(null);
   return (
     <section>
@@ -32,7 +18,6 @@ function Section( { child }) {
 }
 
 const Home: NextPage = () => {
- 
   return (
     <>
     <Head>
@@ -43,14 +28,12 @@ const Home: NextPage = () => {
       <Navbar/>
       <Social/>
       <div className="flex flex-col">
-      {[<Banner/>, <About/>].map((section) => (
-        <Section child={section}/>
+      {[<Banner key="banner"/>, <About key="about"/>].map((section) => (
+        <Section key={section.key} child={section}/>
       ))}
       </div>
     </>
   );
 };
-
-
 
 export default Home;

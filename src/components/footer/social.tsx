@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { SocialIcon } from "react-social-icons";
 import { useAnimate } from "framer-motion";
 import { useEffect } from "react";
 import { GitHub, Linkedin } from "react-feather";

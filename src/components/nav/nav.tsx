@@ -1,17 +1,14 @@
-import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { useAnimate } from "framer-motion";
-import Button from "../html/Button";
 import Navigation from "../html/Navigation";
 
 const Navbar = () => {
     const [scope, animate] = useAnimate();
-    const parentRef = useRef(null);
-    const logoRef = useRef(null)
+    const logoRef = useRef<HTMLParagraphElement | null>(null)
     useEffect(() => {
         const animationTimeout = setTimeout(() => {
           animate(
-            logoRef.current,
+            logoRef.current || '',
             { opacity: 1, top: 25 },
             { duration: 0.2, ease: "easeInOut", delay: 1 }
           );
