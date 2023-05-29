@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { useAnimate } from "framer-motion";
+import { useAnimate, stagger } from "framer-motion";
 
 interface NavigationProps {
     items: string[];
@@ -14,26 +14,18 @@ const Navigation = (props: NavigationProps) => {
     const parentRef = useRef<HTMLUListElement | null>(null);
 
     useEffect(() => {
-        const navItems = parentRef.current?.children;
-        const animationTimeouts = Array.from(navItems || []).map((item, index) => {
-        return setTimeout(() => {
-            animate(
-            item,
+        animate(
+            "li",
             { opacity: 1, top: 60 },
-            { duration: 0.2, ease: "easeInOut", delay: 1.2 }
+            { duration: 0.2, ease: "easeInOut", delay: stagger(0.07 , { startDelay: 1.7}) }
             );
-        }, 500 + index * 70);
-        });
-        return () => {
-            animationTimeouts.forEach((timeout) => clearTimeout(timeout));
-        };
     }, []);
 
     return(
-        <ul ref={parentRef} className={classes}>
+        <ul ref={scope} className={classes}>
            {items.map((item, index) => (
                 <li className="relative opacity-0 top-[-50px]">
-                    <Link href="#about">{item}</Link>
+                    <Link href={`#${item}`}>{item}</Link>
                 </li>
            ))}
         </ul>

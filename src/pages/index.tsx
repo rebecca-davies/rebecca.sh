@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Navbar from "~/components/nav/nav";
 import Banner from "~/components/section/banner";
 import About from "~/components/section/about";
+import Projects from "~/components/section/projects";
 import Social from "~/components/footer/social";
 
 function Section( { child } : { child: JSX.Element} ) {
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
       <Navbar/>
       <Social/>
       <div className="flex flex-col">
-      {[<Banner key="banner"/>, <About key="about"/>].map((section) => (
+      {[<Banner key="banner"/>, <About key="about"/>, <Projects key="projects"/>].map((section) => (
         <Section key={section.key} child={section}/>
       ))}
       </div>
