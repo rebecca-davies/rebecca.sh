@@ -6,7 +6,7 @@ import '@splidejs/react-splide/css';
 
 const Work = () => {
     const [scope, animate] = useAnimate();
-    const isInView = useInView(scope, { once: true, margin: "-150px -150px -450px -450px" });
+    const isInView = useInView(scope, { once: true, margin: "-25% -25% -25% -25%" });
 
     useEffect(() => {
         if (!isInView) {

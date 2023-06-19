@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { useRef } from "react";
-import Navbar from "~/components/nav/nav";
+import Navbar from "~/components/section/nav";
 import Banner from "~/components/section/banner";
 import About from "~/components/section/about";
 import Projects from "~/components/section/projects";
@@ -9,7 +9,7 @@ import Work from "~/components/section/work";
 import Contact from "~/components/section/contact";
 import Social from "~/components/footer/social";
 import Attribute from "~/components/footer/attribute";
-import {motion, useScroll, useSpring} from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 function Section( { child } : { child: JSX.Element} ) {
   const ref = useRef(null);

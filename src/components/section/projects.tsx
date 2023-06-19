@@ -4,7 +4,7 @@ import { useAnimate, useInView, stagger } from "framer-motion";
 
 const Projects = () => {
     const [scope, animate] = useAnimate();
-    const isInView = useInView(scope, { once: true, margin: "-150px -150px -450px -450px" });
+    const isInView = useInView(scope, { once: true, margin: "-25% -25% -25% -25%" });
     const techRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -133,7 +133,7 @@ const Projects = () => {
                         </div>
                         <div className="flex flex-col text-xl max-w-4xl text-[#bdaecd] font-roboto leading-8 relative">
                             <p className="text-purple-100 text-2xl font-bold mb-3">🎮 PokeMMO</p>
-                            <p className="mb-3">A Pokemon clone re-imagined as an MMO supporting thousands of concurrent players, gained hundreds and hundreds of fans in the community.</p>
+                            <p className="mb-3">A Pokemon clone re-imagined as an MMO supporting thousands of concurrent players.</p>
                             <div ref={techRef} className="flex text-[#dcff2d] font-roboto-mono text-base gap-x-7 gap-y-5 flex-wrap">
                                 <p>Kotlin</p>
                                 <p>OpenGL</p>

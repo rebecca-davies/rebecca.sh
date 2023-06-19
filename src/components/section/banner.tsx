@@ -34,10 +34,10 @@ const Banner = () => {
             rendererSettings={{preserveAspectRatio: "xMidYMid slice"}} />
         <div ref={bannerPage} className="relative overflow-clip h-screen flex items-center justify-center bg-[#0f0734] opacity-0">
                 <div ref={bannerBody} className="max-w-4xl pr-10 pl-10 z-[2]">
-                    <p className="text-[#dcff2d] font-roboto-mono text-base mb-5 relative opacity-0 top-[20px]">Hey there! My name is</p>
-                    <p className="text-purple-100 text-7xl font-bold mb-5 relative opacity-0 top-[20px]">Rebecca Davies.</p>
-                    <p className="text-[#bdaecd] text-7xl mb-5 font-semibold relative opacity-0 top-[20px]">I build cool things online.</p>
-                    <p className="text-xl max-w-3xl text-[#bdaecd] font-roboto leading-8 relative opacity-0 top-[20px] mb-12">I&apos;m <span className="text-[#dcff2d] font-bold">really</span> into software, currently specializing in all things <span className="text-[#dcff2d] font-bold">web development</span>. From the <span className="text-[#dcff2d] font-bold">front-end</span> to the <span className="text-[#dcff2d] font-bold">back-end</span>, I love building and designing systems that send a message.<br/>Feel like chatting? Send me a message below!</p>
+                    <p className="text-[#dcff2d] ml-[1px] font-roboto-mono text-lg mb-2 relative opacity-0 top-[20px] tablet:text-base tablet:mb-5">Hey there! My name is</p>
+                    <p className="text-purple-100 font-bold relative opacity-0 top-[20px] text-4xl mb-2 tablet:text-7xl tablet:mb-5">Rebecca Davies.</p>
+                    <p className="text-[#bdaecd] font-semibold relative opacity-0 top-[20px] text-4xl mb-2 tablet:text-7xl tablet:mb5">I build cool things online.</p>
+                    <p className="max-w-3xl text-[#bdaecd] font-roboto leading-8 relative opacity-0 top-[20px] text-sm tablet:text-lg desktop:text-xl  mb-6 tablet:mb-12">I&apos;m really into software, currently specializing in all things <span className="text-[#dcff2d] font-bold">web development</span>. From the <span className="text-[#dcff2d] font-bold">front-end</span> to the <span className="text-[#dcff2d] font-bold">back-end</span>, I love building and designing systems that send a message.<br/>Feel like chatting? Send me a message below!</p>
                     <p className="relative opacity-0 top-[20px]"><Button text="Contact me"/></p>
                 </div>
             </div>
