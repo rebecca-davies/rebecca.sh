@@ -12,7 +12,7 @@ const Banner = () => {
     const lottieAnim = useRef<HTMLDivElement | null>(null);
    
     useEffect(() => {
-        animate(bannerPage.current || '', { display: "flex" }, {delay: 1 });
+        animate(bannerPage.current || '', { opacity: 1 }, {delay: 1 });
         animate(".svgContainer", { display: "none" }, {delay: 1.3 });
     }, []);
 
@@ -32,7 +32,7 @@ const Banner = () => {
             className="top-0 left-0 absolute z-10 w-screen h-screen svgContainer" 
             animationData={bgAnimation} 
             rendererSettings={{preserveAspectRatio: "xMidYMid slice"}} />
-            <div ref={bannerPage} className="hidden relative overflow-clip h-screen flex items-center justify-center bg-[#140c3e]">
+        <div ref={bannerPage} className="relative overflow-clip h-screen flex items-center justify-center bg-[#0f0734] opacity-0">
                 <div ref={bannerBody} className="max-w-4xl pr-10 pl-10 z-[2]">
                     <p className="text-[#dcff2d] font-roboto-mono text-base mb-5 relative opacity-0 top-[20px]">Hey there! My name is</p>
                     <p className="text-purple-100 text-7xl font-bold mb-5 relative opacity-0 top-[20px]">Rebecca Davies.</p>

@@ -5,13 +5,17 @@ import Navbar from "~/components/nav/nav";
 import Banner from "~/components/section/banner";
 import About from "~/components/section/about";
 import Projects from "~/components/section/projects";
+import Work from "~/components/section/work";
+import Contact from "~/components/section/contact";
 import Social from "~/components/footer/social";
+import Attribute from "~/components/footer/attribute";
+import {motion, useScroll, useSpring} from "framer-motion";
 
 function Section( { child } : { child: JSX.Element} ) {
   const ref = useRef(null);
   return (
     <section>
-      <div ref={ref} className="flex-grow h-screen">
+      <div ref={ref}>
         { child }
       </div>
     </section>
@@ -19,20 +23,23 @@ function Section( { child } : { child: JSX.Element} ) {
 }
 
 const Home: NextPage = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
   return (
     <>
-    <Head>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com"  crossOrigin=""/>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&family=Roboto:wght@100;300;400;500;700&family=Space+Mono:wght@100;200;300;400;700&display=swap" rel="stylesheet"/>
-    </Head>
+      <motion.div className="progress fixed top-0 h-full right-0 w-[5px] z-50 bg-[#dcff33]" style={{ scaleY, originY: 'top' }} />
       <Navbar/>
       <Social/>
       <div className="flex flex-col">
-      {[<Banner key="banner"/>, <About key="about"/>, <Projects key="projects"/>].map((section) => (
+      {[<Banner key="banner"/>, <About key="about"/>, <Projects key="projects"/>, <Work key="work"/>].map((section) => (
         <Section key={section.key} child={section}/>
       ))}
       </div>
+      <Attribute/>
     </>
   );
 };

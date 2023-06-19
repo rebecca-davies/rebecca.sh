@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { useAnimate, stagger } from "framer-motion";
+import JSXStyle from "styled-jsx/style";
 
 interface NavigationProps {
     items: string[];
@@ -23,11 +24,11 @@ const Navigation = (props: NavigationProps) => {
 
     return(
         <ul ref={scope} className={classes}>
-           {items.map((item, index) => (
-                <li className="relative opacity-0 top-[-50px]">
-                    <Link href={`#${item}`}>{item}</Link>
+            {items.map((item, index) => (
+                <li className="relative opacity-0 top-[-50px] text-purple-50 nav-text">
+                    <Link href={`#${item}`} data-text={item}>{item}</Link>
                 </li>
-           ))}
+            ))}
         </ul>
         
     );

@@ -5,11 +5,18 @@
 
 
 @layer components {
+    @font-face {
+      font-family: "Roboto";
+      src: url("../../public/fonts/roboto/Roboto-Regular.ttf");
+    }
+    @font-face {
+      font-family: "Roboto Mono";
+      src: url("../../public/fonts/roboto-mono/RobotoMono-Regular.ttf");
+    }
     .font-attention {
         @apply bg-gradient-to-r from-[#7d3fce] to-[#a142f4] text-white px-4 pb-1;
     }
     html {
-        scroll-snap-type: y mandatory;
         scroll-behavior: smooth !important;
     }
     body {
@@ -17,20 +24,15 @@
         --accent: var(--white);
     }
     section {
-        height: 100vh;
         position: relative;
-        scroll-snap-align: center;
-        perspective: 500px;
       }
-      ::-webkit-scrollbar {
-        height: 5px;
-        width: 5px;
-        background: var(--background);
+
+      li.nav-text::after {
+      
       }
       
-      ::-webkit-scrollbar-thumb {
-        background: var(--accent);
-        -webkit-border-radius: 1ex;
+      ::-webkit-scrollbar {
+        display: none;
       }
       
       ::-webkit-scrollbar-corner {
@@ -38,6 +40,10 @@
       }
       body {
         overflow-x: hidden;
+      }
+
+      .showcase-image {
+        transform: perspective(600px) rotate3d(0, 0.5, 0, 30deg);
       }
 
       .btn {

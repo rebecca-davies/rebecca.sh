@@ -3,7 +3,7 @@ import { useAnimate, useInView, stagger } from "framer-motion";
 
 const About = () => {
   const [scope, animate] = useAnimate();
-  const isInView = useInView(scope, { once: true });
+  const isInView = useInView(scope, { once: true, margin: "-150px -150px -450px -450px" });
   const techRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -11,10 +11,16 @@ const About = () => {
       return;
     }
     animate(
+      ".title-container",
+      { opacity: 1, top: 0 },
+      { duration: 0.2, ease: "easeInOut", delay: stagger(0.07) }
+    );
+    animate(
       "p",
       { opacity: 1, top: 0 },
       { duration: 0.2, ease: "easeInOut", delay: stagger(0.07) }
     );
+   
   }, [isInView, animate, scope]);
 
   useEffect(() => {
@@ -29,9 +35,12 @@ const About = () => {
   }, [isInView, animate]);
       
     return (
-        <div id="about" className="relative overflow-clip h-screen bg-[#140c3e] flex items-center justify-center">
+        <div id="about" className="relative overflow-clip py-60 bg-[#0f0734] flex items-center justify-center">
             <div ref={scope} className="max-w-4xl pr-10 pl-10">
-                <p className="text-purple-100 text-4xl font-bold mb-5 relative opacity-0 top-[20px]">About me</p>
+              <div className="relative flex opacity-0 top-[20px] title-container">
+                <p className="pr-6 text-purple-100 text-4xl font-bold mb-5 relative">About me</p>
+                <span className="relative top-[20px] h-[1px] bg-purple-50 opacity-20 flex-grow max-w-lg" />
+              </div>
                 <p className="text-xl max-w-3xl text-[#bdaecd] font-roboto leading-8 relative opacity-0 top-[20px] mb-5">Hey! I&apos;m Rebecca, Culpa cillum anim sunt pariatur consectetur occaecat ea non officia consectetur ad nulla. Enim mollit commodo ea qui magna aliqua esse. Sint aliquip veniam sit amet magna quis exercitation do id sint voluptate ex. Officia sunt nostrud incididunt ullamco ea quis proident.</p>
                 <p className="text-xl max-w-3xl text-[#bdaecd] font-roboto leading-8 relative opacity-0 top-[20px] mb-5">Commodo incididunt mollit occaecat aliqua irure ex consectetur esse elit. Aliqua in tempor aute id id dolor voluptate ex cillum ad velit nisi. Culpa nulla minim pariatur sint ipsum laboris ex occaecat pariatur ipsum fugiat. Ut Lorem eu consequat consectetur eu. Nulla laboris nulla esse pariatur aute cillum sint excepteur commodo.</p>
                 <p className="text-xl max-w-3xl text-[#bdaecd] font-roboto leading-8 relative opacity-0 top-[20px] mb-5">Here are a few technologies that I use day-to-day:</p>

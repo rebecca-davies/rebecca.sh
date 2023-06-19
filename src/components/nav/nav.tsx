@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <nav className="fixed z-10 w-full text-purple-100">
           <p ref={scope} className="max-w-max left-10 text-4xl font-light top-[-20px] opacity-0 relative text-purple-100">rebecca</p>
-          <Navigation items={['home', 'about', 'projects', 'previous work', 'contact', 'resume']} classes="absolute max-w-md right-10 font-roboto-mono flex flex-col text-right items-end gap-8 text-lg font-light tracking-wide text-purple-100 top-[-30px]" />
+          <Navigation items={['home', 'about', 'projects', 'previous work', 'resume']} classes="absolute max-w-md right-10 font-roboto-mono flex flex-col text-right items-end gap-8 text-lg font-light tracking-wide text-purple-100 top-[-30px]" />
       </nav>
     </>
   );
