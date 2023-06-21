@@ -51,7 +51,7 @@ const Navbar = () => {
     <div ref={scope} className="">
       <div className="backdrop fixed -top-20 bg-[#0f0734] z-10 w-full h-20 desktop:hidden"/>
       <nav className="fixed z-20 w-full text-purple-100">
-          <p className="title max-w-max left-10 text-4xl font-light top-[-20px] opacity-0 relative text-purple-100">rebecca<br/><span className='relative text-sm -top-5 right-3 font-thin'>🚧 work in progress 🚧</span></p>
+          <p className="title max-w-max left-10 text-4xl font-light top-[-20px] opacity-0 relative text-purple-100 z-40">rebecca<br/><span className='relative text-sm -top-5 right-3 font-thin'>🚧 work in progress 🚧</span></p>
           <Navigation items={['home', 'about', 'projects', 'previous work', 'resume']} classes="absolute max-w-md right-10 font-roboto-mono flex flex-col text-right items-end gap-8 text-lg font-light tracking-wide text-purple-100 top-[-30px]" />
       </nav>
     </div>

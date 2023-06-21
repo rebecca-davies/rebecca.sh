@@ -30,7 +30,7 @@ const Work = () => {
       }, [isInView, animate, scope]);
 
     return(
-        <div id="previous work" className="relative overflow-clip pt-32 tablet:py-60 bg-[#0f0734] flex flex-col items-center justify-center">
+        <div id="previous work" className="relative overflow-clip pt-32 tablet:pt-60 bg-[#0f0734] flex flex-col items-center justify-center">
             <div ref={scope} className="max-w-4xl pr-10 pl-10 w-full">
                 <div className="relative flex opacity-0 top-[20px] title-container">
                     <p className="pr-6 text-purple-100 text-2xl tablet:text-4xl font-bold mb-5 relative">Previous Work</p>
